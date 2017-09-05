@@ -7,7 +7,8 @@ const _ = require('lodash');
 
 /**
  * Default configurations used to generate a new hash.
- * @type {Object}
+ * @private
+ * @type {object}
  */
 const defaultConfigs = {
   // Minimum number of iterations recommended to ensure data safety,
@@ -28,7 +29,7 @@ const defaultConfigs = {
 /**
  * Generates a cryptographically secure random string for use as a password salt
  * using Node's built-in crypto.randomBytes().
- *
+ * @private
  * @param  {number} length The length of the salt to be generated.
  * @param  {function} callback Called after the salt has been generated.
  */
@@ -43,65 +44,62 @@ function createSalt(length, callback) {
 
 /**
  * Generates an unique hash and the data needed to verify it.
+ * @public
  * @param  {string} password The password to hash.
- * @param  {object} configs  Configurations related to the hashing function.
- * @param  {generateCallback} callback Called after the hash has been generated.
+ * @param  {object} configs Configurations related to the hashing function.
+ * @returns {Promise<string>} A promise that contains the generated hash string.
  */
- /**
-  * @callback generateCallback
-  * @param  {object} err  Possible error thrown.
-  * @param  {string} hash Generated hash string.
-  */
-function hashFunc(password, configs, callback) {
-  const cfgs = _.extend(defaultConfigs, configs);
+function hashFunc(password, configs) {
+  return new Promise((resolve, reject) => {
+    const cfgs = _.extend(defaultConfigs, configs);
 
-  createSalt(cfgs.keylen, (err, salt) => {
-    if (err) {
-      callback(err);
-      return;
-    }
-    crypto.pbkdf2(password, salt, cfgs.iterations, cfgs.keylen, cfgs.digest, (err, hash) => {
+    createSalt(cfgs.keylen, (err, salt) => {
       if (err) {
-        callback(err);
+        reject(err);
         return;
       }
-      const data = {
-        secret: hash.toString('base64'),
-        salt,
-        iterations: cfgs.iterations,
-        keylen: cfgs.keylen,
-        digest: cfgs.digest
-      };
-      callback(null, JSON.stringify(data));
+      crypto.pbkdf2(password, salt, cfgs.iterations, cfgs.keylen, cfgs.digest, (err, hash) => {
+        if (err) {
+          reject(err);
+          return;
+        }
+        const data = {
+          secret: hash.toString('base64'),
+          salt,
+          iterations: cfgs.iterations,
+          keylen: cfgs.keylen,
+          digest: cfgs.digest
+        };
+        resolve(JSON.stringify(data));
+      });
     });
   });
 }
 
 /**
  * Determines whether or not the user's input matches the stored password.
- * @param  {object} hash Previously hashed password.
- * @param  {password} password User's password input.
- * @param  {hashCallback} callback Called after the hash has been computed.
+ * @public
+ * @param  {string} hash Stringified hash object generated from this package.
+ * @param  {string} input User's password input.
+ * @returns {Promise<boolean>} A promise that contains a boolean that is true if
+ *   if the hash computed for the input matches.
  */
- /**
-  * @callback hashCallback
-  * @param  {object} err Possible error thrown.
-  * @param  {string} match True if the hash computed for the input matches.
-  */
-function verifyFunc(hash, password, callback) {
-  let hashObj;
-  try {
-    hashObj = JSON.parse(hash);
-  } catch (err) {
-    return callback(new Error('Couldn\'t parse the provided hash.'));
-  }
-  crypto.pbkdf2(password, hashObj.salt, hashObj.iterations, hashObj.keylen, hashObj.digest, (err, pwdHash) => {
-    if (err) {
-      callback(err);
-      return;
+function verifyFunc(hash, password) {
+  return new Promise((resolve, reject) => {
+    let hashObj;
+    try {
+      hashObj = JSON.parse(hash);
+    } catch (err) {
+      return reject(new Error('Couldn\'t parse the provided hash.'));
     }
-    const match = tsse(pwdHash.toString('base64'), hashObj.secret);
-    callback(null, match);
+    crypto.pbkdf2(password, hashObj.salt, hashObj.iterations, hashObj.keylen, hashObj.digest, (err, pwdHash) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      const match = tsse(pwdHash.toString('base64'), hashObj.secret);
+      resolve(match);
+    });
   });
 }
 
