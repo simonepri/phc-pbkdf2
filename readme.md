@@ -89,19 +89,16 @@ npm install --save @upash/pbkdf2
 ```js
 const pbkdf2 = require('@upash/pbkdf2');
 
-// Hash and verify with pbkdf2-crypt using default secure configs
-pbkdf2.hash('We are all unicorns')
-  .then(hash => {
-    console.log(hash);
-    // => "mWlElQFNoj+93rTG+v90vFekBgDGsN1hRLhhPbMjC598GOvGitqxs7Bb2eoPU6ZB54zLYdllfg08FZRTZeL9bg==,zRkZt6xXoVQuyFVuXvrIWf0DqeT0Ac2ex8tkbYVKWYoCGQETCxmMs+tkPCzkaqZjnSzvMGO7ncPooyeKQwb8Og==,10000,64,sha256"
-    // You can store this directly in your database.
+// Hash and verify with pbkdf2-crypt using default secure configs.
+const hash = await pbkdf2.hash('We are all unicorns');
+console.log(hash);
+// => "mWlElQFNoj+93rTG+v90vFekBgDGsN1hRLhhPbMjC598GOvGitqxs7Bb2eoPU6ZB54zLYdllfg08FZRTZeL9bg==,zRkZt6xXoVQuyFVuXvrIWf0DqeT0Ac2ex8tkbYVKWYoCGQETCxmMs+tkPCzkaqZjnSzvMGO7ncPooyeKQwb8Og==,10000,64,sha256"
+// You can store this directly in your database.
 
-    pbkdf2.verify(hash, 'We are all unicorns')
-      .then(match => {
-        console.log(match);
-        // => true
-      });
-  });
+// Then you can verify against it in this way.
+const match = await pbkdf2.verify(hash, 'We are all unicorns');
+console.log(match);
+// => true
 ```
 
 ## API
