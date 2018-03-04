@@ -1,5 +1,9 @@
+<p align="center">
+  <a href="https://github.com/simonepri/upash">
+    <img src="https://github.com/simonepri/upash/raw/upash/media/upash.png" alt="upash" width="600"/>
+  </a>
+</p>
 <h1 align="center">
-  <b>@upash/pbkdf2</b>
 </h1>
 <p align="center">
   <!-- CI - TravisCI -->
