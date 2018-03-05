@@ -181,7 +181,7 @@ See also the list of [contributors][contributors] who participated in this proje
 This project is licensed under the MIT License - see the [license][license] file for details.
 
 <!-- Links -->
-[upash]: https://github.com/simonepri/upash-pbkdf2
+[upash]: https://github.com/simonepri/upash
 
 [start]: https://github.com/simonepri/upash-pbkdf2#start-of-content
 [new issue]: https://github.com/simonepri/upash-pbkdf2/issues/new
