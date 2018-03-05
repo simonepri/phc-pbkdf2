@@ -1,6 +1,6 @@
 {
   "name": "credential-plus-pbkdf2",
-  "version": "2.0.2",
+  "version": "2.0.4",
   "description": "PBKDF2 password hashing function for credential-plus",
   "main": "index.js",
   "dependencies": {
