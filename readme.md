@@ -128,7 +128,8 @@ time and memory usage of the algorithm.
 
 Usage reports are generated thanks to [sympact][gh:sympact].
 
-#### System Report
+<details>
+<summary><strong>System Report</strong> ↴</summary>
 
 ```
 Distro    Release  Platform  Arch
@@ -145,10 +146,10 @@ Micron Technology Inc.  LPDDR3  4294.967 MB  1867 MHz
 Micron Technology Inc.  LPDDR3  4294.967 MB  1867 MHz
 ```
 
-#### Custom iterations
+</details>
 
 <details>
-<summary><strong>1˙000 iterations ↴</strong></summary>
+<summary><strong>1˙000 iterations</strong> ↴</summary>
 
 ```
 CPU Usage (avarage ± σ)  CPU Usage Range (min … max)
@@ -172,7 +173,7 @@ Instant  CPU Usage  RAM Usage  PIDS
 </details>
 
 <details>
-<summary><strong>10˙000 iterations ↴</strong></summary>
+<summary><strong>10˙000 iterations</strong> ↴</summary>
 
 ```
   CPU Usage (avarage ± σ)  CPU Usage Range (min … max)
@@ -196,7 +197,7 @@ Instant  CPU Usage  RAM Usage  PIDS
 </details>
 
 <details>
-<summary><strong>25˙000 iterations ↴</strong></summary>
+<summary><strong>25˙000 iterations</strong> ↴</summary>
 
 ```
 CPU Usage (avarage ± σ)  CPU Usage Range (min … max)
@@ -221,7 +222,7 @@ Instant  CPU Usage  RAM Usage  PIDS
 </details>
 
 <details>
-<summary><strong>50˙000 iterations ↴</strong></summary>
+<summary><strong>50˙000 iterations</strong> ↴</summary>
 
 ```
 CPU Usage (avarage ± σ)  CPU Usage Range (min … max)
@@ -247,7 +248,7 @@ Instant  CPU Usage  RAM Usage  PIDS
 </details>
 
 <details>
-<summary><strong>100˙000 iterations ↴</strong></summary>
+<summary><strong>100˙000 iterations</strong> ↴</summary>
 
 ```
 CPU Usage (avarage ± σ)  CPU Usage Range (min … max)
@@ -275,7 +276,7 @@ Instant  CPU Usage  RAM Usage  PIDS
 </details>
 
 <details>
-<summary><strong>250˙000 iterations ↴</strong></summary>
+<summary><strong>250˙000 iterations</strong> ↴</summary>
 
 ```
 CPU Usage (avarage ± σ)  CPU Usage Range (min … max)
@@ -311,7 +312,7 @@ Instant  CPU Usage  RAM Usage  PIDS
 </details>
 
 <details>
-<summary><strong>500˙000 iterations ↴</strong></summary>
+<summary><strong>500˙000 iterations</strong> ↴</summary>
 
 ```
 CPU Usage (avarage ± σ)  CPU Usage Range (min … max)
