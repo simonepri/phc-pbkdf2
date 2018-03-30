@@ -32,6 +32,16 @@ Promise.resolve()
     console.log('► CMD:', results.cmd);
     console.log(results.stdout);
   })
+  .then(() => bench('r9(yaV@L', 'r9(yaV@L', 25000))
+  .then(results => {
+    console.log('► CMD:', results.cmd);
+    console.log(results.stdout);
+  })
+  .then(() => bench('r9(yaV@L', 'r9(yaV@L', 50000))
+  .then(results => {
+    console.log('► CMD:', results.cmd);
+    console.log(results.stdout);
+  })
   .then(() => bench('r9(yaV@L', 'r9(yaV@L', 100000))
   .then(results => {
     console.log('► CMD:', results.cmd);
