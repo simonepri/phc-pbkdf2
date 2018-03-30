@@ -312,6 +312,14 @@ Gets the list of all identifiers supported by this hashing function.
 hashing function.  
 **Access**: public
 
+## Related
+- [@phc/argon2][argon2] -
+🔒 Node.JS Argon2 password hashing algorithm following the PHC string format.
+- [@phc/scrypt][scrypt] -
+🔒 Node.JS scrypt password hashing algorithm following the PHC string format.
+- [@phc/bcrypt][bcrypt] -
+🔒 Node.JS bcrypt password hashing algorithm following the PHC string format.
+
 ## Contributing
 
 Contributions are REALLY welcome and if you find a security flaw in this code, PLEASE [report it][new issue].  
@@ -334,6 +342,10 @@ This project is licensed under the MIT License - see the [license][license] file
 
 [license]: https://github.com/simonepri/phc-pbkdf2/tree/master/license
 [contributing]: https://github.com/simonepri/phc-pbkdf2/tree/master/.github/contributing.md
+
+[argon2]: https://github.com/simonepri/phc-argon2
+[scrypt]: https://github.com/simonepri/phc-scrypt
+[bcrypt]: https://github.com/simonepri/phc-bcrypt
 
 [github:simonepri]: https://github.com/simonepri
 [twitter:simoneprimarosa]: http://twitter.com/intent/user?screen_name=simoneprimarosa
