@@ -16,7 +16,7 @@ const MAX_UINT32 = 4294967295; // 2**32 - 1
 const defaults = {
   // Minimum number of rounds recommended to ensure data safety,
   // this value changes every year as technology improves.
-  iterations: 100000,
+  iterations: 25000,
 
   // The minimum recommended size for the salt is 128 bits.
   saltSize: 16, // bytes
