@@ -259,8 +259,8 @@ Instant  CPU Usage  RAM Usage  PIDS
 built-in crypto.randomBytes() and crypto.pbkdf2().</p>
 </dd>
 <dt><a href="#verify">verify(password, phcstr)</a> ⇒ <code>Promise.&lt;boolean&gt;</code></dt>
-<dd><p>Determines whether or not the stored hash string in PHC format matches the
-hash of the password generated for the password provided.</p>
+<dd><p>Determines whether or not the hash stored inside the PHC formatted string
+matches the hash generated for the password provided.</p>
 </dd>
 <dt><a href="#identifiers">identifiers()</a> ⇒ <code>Array.&lt;string&gt;</code></dt>
 <dd><p>Gets the list of all identifiers supported by this hashing function.</p>
@@ -282,9 +282,9 @@ format.
 | --- | --- | --- | --- |
 | password | <code>string</code> |  | The password to hash. |
 | [options] | <code>Object</code> |  | Optional configurations related to the hashing function. |
-| [options.iterations] | <code>number</code> | <code>100000</code> | Optional number of iterations to use. Must be an integer within the range (`0` < `iterations` < `1<<32`). |
-| [options.saltSize] | <code>number</code> | <code>16</code> | Optional number of bytes to use when autogenerating new salts. Me be between `0` and `1024`. |
-| [options.digest] | <code>string</code> | <code>&quot;sha512&quot;</code> | Optinal name of digest to use when applying the key derivation functions. Can be one of [`'sha1'`, `'sha256'`, `'sha512'`]. |
+| [options.iterations] | <code>number</code> | <code>100000</code> | Optional number of iterations to use. Must be an integer within the range (`1` <= `iterations` <= `2^32-1`). |
+| [options.saltSize] | <code>number</code> | <code>16</code> | Optional number of bytes to use when autogenerating new salts. Must be an integer within the range (`1` <= `saltSize` <= `2^10-1`). |
+| [options.digest] | <code>string</code> | <code>&quot;sha512&quot;</code> | Optinal name of digest to use when applying the key derivation function. Can be one of [`'sha1'`, `'sha256'`, `'sha512'`]. |
 
 <a name="verify"></a>
 

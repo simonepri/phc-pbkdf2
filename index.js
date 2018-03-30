@@ -18,8 +18,7 @@ const defaults = {
   // this value changes every year as technology improves.
   iterations: 100000,
 
-  // According to the PBKDF2 standard, the minimum recommended size for the salt
-  // is 128 bits
+  // The minimum recommended size for the salt is 128 bits.
   saltSize: 16, // bytes
 
   // SHA-1 is sufficient, using SHA-256 or SHA-512 has the benefit of
@@ -65,11 +64,12 @@ function genSalt(length) {
  * @param  {Object} [options] Optional configurations related to the hashing
  * function.
  * @param  {number} [options.iterations=100000] Optional number of iterations to use.
- * Must be an integer within the range (`0` < `iterations` < `1<<32`).
+ * Must be an integer within the range (`1` <= `iterations` <= `2^32-1`).
  * @param  {number} [options.saltSize=16] Optional number of bytes to use when
- * autogenerating new salts. Me be between `0` and `1024`.
+ * autogenerating new salts.
+ * Must be an integer within the range (`1` <= `saltSize` <= `2^10-1`).
  * @param  {string} [options.digest=sha512] Optinal name of digest to use when
- * applying the key derivation functions.
+ * applying the key derivation function.
  * Can be one of [`'sha1'`, `'sha256'`, `'sha512'`].
  * @returns {Promise.<string>} The generated secure hash string in the PHC
  * format.
