@@ -27,8 +27,8 @@ test("should throw an error if the 'digest' option is unsupported", async t => {
 
 test("should throw an error if the 'saltSize' option is out of range", async t => {
   let err = await t.throws(m.hash('password', {saltSize: -1}));
-  t.regex(err.message, /The 'saltSize' option must be between/);
+  t.regex(err.message, /The 'saltSize' option must be in the range/);
 
   err = await t.throws(m.hash('password', {saltSize: 1025}));
-  t.regex(err.message, /The 'saltSize' option must be between/);
+  t.regex(err.message, /The 'saltSize' option must be in the range/);
 });

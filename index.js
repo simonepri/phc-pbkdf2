@@ -112,7 +112,9 @@ function hash(password, options) {
   // Salt Size Validation
   if (saltSize < 0 || saltSize > 1024) {
     return Promise.reject(
-      new TypeError("The 'saltSize' option must be between 0 and 1024")
+      new TypeError(
+        `The 'saltSize' option must be in the range (1 <= saltSize <= 1023)`
+      )
     );
   }
 
