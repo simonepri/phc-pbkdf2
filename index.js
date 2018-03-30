@@ -153,7 +153,12 @@ function verify(phcstr, password) {
 
   // Identifier Validation
   const idparts = phcobj.id.split('-');
-  if (idparts.length !== 2 || idparts[0] !== 'pbkdf2') {
+  if (
+    idparts.length !== 2 ||
+    idparts[0] === '' ||
+    idparts[1] === '' ||
+    idparts[0] !== 'pbkdf2'
+  ) {
     return Promise.reject(
       new TypeError(`Incompatible ${phcobj.id} identifier found in the hash`)
     );
