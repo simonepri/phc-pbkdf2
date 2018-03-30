@@ -148,6 +148,32 @@ Micron Technology Inc.  LPDDR3  4294.967 MB  1867 MHz
 
 </details>
 
+
+<details>
+<summary><strong>Default options</strong> ↴</summary>
+
+```
+CPU Usage (avarage ± σ)  CPU Usage Range (min … max)
+-----------------------  ---------------------------
+0.90 % ± 0.00 %          0.90 % … 0.90 %            
+
+RAM Usage (avarage ± σ)  RAM Usage Range (min … max)
+-----------------------  ---------------------------
+22.069 MB ± 0.504 MB     21.357 MB … 22.434 MB      
+
+Execution time  Sampling time  Samples  
+--------------  -------------  ---------
+0.045 s         0.098 s        3 samples
+
+Instant  CPU Usage  RAM Usage  PIDS
+-------  ---------  ---------  ----
+0.030 s  0.90 %     21.357 MB  5268
+0.081 s  0.90 %     22.417 MB  5268
+0.098 s  0.90 %     22.434 MB  5268
+```
+
+</details>
+
 <details>
 <summary><strong>1˙000 iterations</strong> ↴</summary>
 
