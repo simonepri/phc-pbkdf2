@@ -150,7 +150,7 @@ Micron Technology Inc.  LPDDR3  4294.967 MB  1867 MHz
 
 
 <details>
-<summary><strong>Default options</strong> ↴</summary>
+<summary><strong>Default options</strong> - <i>{iterations:25000, digest:'sha512'}</i> ↴</summary>
 
 ```
 CPU Usage (avarage ± σ)  CPU Usage Range (min … max)
@@ -175,7 +175,7 @@ Instant  CPU Usage  RAM Usage  PIDS
 </details>
 
 <details>
-<summary><strong>1˙000 iterations</strong> ↴</summary>
+<summary><strong>1˙000 iterations</strong> - <i>{iterations:1000, digest:'sha512'}</i> ↴</summary>
 
 ```
 CPU Usage (avarage ± σ)  CPU Usage Range (min … max)
@@ -199,7 +199,7 @@ Instant  CPU Usage  RAM Usage  PIDS
 </details>
 
 <details>
-<summary><strong>10˙000 iterations</strong> ↴</summary>
+<summary><strong>10˙000 iterations</strong> - <i>{iterations:10000, digest:'sha512'}</i> ↴</summary>
 
 ```
   CPU Usage (avarage ± σ)  CPU Usage Range (min … max)
@@ -223,7 +223,7 @@ Instant  CPU Usage  RAM Usage  PIDS
 </details>
 
 <details>
-<summary><strong>25˙000 iterations</strong> ↴</summary>
+<summary><strong>25˙000 iterations</strong> - <i>{iterations:25000, digest:'sha512'}</i> ↴</summary>
 
 ```
 CPU Usage (avarage ± σ)  CPU Usage Range (min … max)
@@ -248,7 +248,7 @@ Instant  CPU Usage  RAM Usage  PIDS
 </details>
 
 <details>
-<summary><strong>50˙000 iterations</strong> ↴</summary>
+<summary><strong>50˙000 iterations</strong> - <i>{iterations:50000, digest:'sha512'}</i> ↴</summary>
 
 ```
 CPU Usage (avarage ± σ)  CPU Usage Range (min … max)
@@ -274,7 +274,7 @@ Instant  CPU Usage  RAM Usage  PIDS
 </details>
 
 <details>
-<summary><strong>100˙000 iterations</strong> ↴</summary>
+<summary><strong>100˙000 iterations</strong> - <i>{iterations:100000, digest:'sha512'}</i> ↴</summary>
 
 ```
 CPU Usage (avarage ± σ)  CPU Usage Range (min … max)
@@ -302,7 +302,7 @@ Instant  CPU Usage  RAM Usage  PIDS
 </details>
 
 <details>
-<summary><strong>250˙000 iterations</strong> ↴</summary>
+<summary><strong>250˙000 iterations</strong> - <i>{iterations:250000, digest:'sha512'}</i> ↴</summary>
 
 ```
 CPU Usage (avarage ± σ)  CPU Usage Range (min … max)
@@ -338,7 +338,7 @@ Instant  CPU Usage  RAM Usage  PIDS
 </details>
 
 <details>
-<summary><strong>500˙000 iterations</strong> ↴</summary>
+<summary><strong>500˙000 iterations</strong> - <i>{iterations:500000, digest:'sha512'}</i> ↴</summary>
 
 ```
 CPU Usage (avarage ± σ)  CPU Usage Range (min … max)
