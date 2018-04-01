@@ -487,7 +487,7 @@ This project is licensed under the MIT License - see the [license][license] file
 [license]: https://github.com/simonepri/phc-pbkdf2/tree/master/license
 [contributing]: https://github.com/simonepri/phc-pbkdf2/tree/master/.github/contributing.md
 
-[tvec]: https://github.com/simonepri/phc-scrypt/tree/master/test/vectors.js
+[tvec]: https://github.com/simonepri/phc-pbkdf2/tree/master/test/vectors.js
 
 [argon2]: https://github.com/simonepri/phc-argon2
 [scrypt]: https://github.com/simonepri/phc-scrypt
