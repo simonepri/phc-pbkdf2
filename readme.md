@@ -94,6 +94,8 @@ Where:
 | `<salt>` | <code>string</code> | A sequence of bits, known as a [cryptographic salt][specs:salt] encoded in [B64][specs:B64]. |
 | `<hash>` | <code>string</code> | The computed derived key by the [pbkdf2][specs:PBKDF2] algorithm encoded in [B64][specs:B64]. |
 
+For more details consult the pbkdf2 paper [here][paper].
+
 ## Install
 
 ```bash
@@ -386,6 +388,11 @@ Instant  CPU Usage  RAM Usage  PIDS
 
 </details>
 
+## Test vectors
+
+The [pbkdf2 paper][paper:test] lists five test vectors to test implementation.  
+This package implements them [here][tvec].
+
 ## API
 
 #### TOC
@@ -480,6 +487,8 @@ This project is licensed under the MIT License - see the [license][license] file
 [license]: https://github.com/simonepri/phc-pbkdf2/tree/master/license
 [contributing]: https://github.com/simonepri/phc-pbkdf2/tree/master/.github/contributing.md
 
+[tvec]: https://github.com/simonepri/phc-scrypt/tree/master/test/vectors.js
+
 [argon2]: https://github.com/simonepri/phc-argon2
 [scrypt]: https://github.com/simonepri/phc-scrypt
 [bcrypt]: https://github.com/simonepri/phc-bcrypt
@@ -495,3 +504,6 @@ This project is licensed under the MIT License - see the [license][license] file
 [specs:salt]: https://en.wikipedia.org/wiki/Salt_(cryptography)
 [specs:HMAC]: https://en.wikipedia.org/wiki/HMAC
 [specs:PBKDF2]: https://en.wikipedia.org/wiki/PBKDF2
+
+[paper]: https://tools.ietf.org/html/rfc2898
+[paper:test]: https://tools.ietf.org/html/rfc6070#section-2
