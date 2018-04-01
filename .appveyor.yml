@@ -18,6 +18,8 @@ test_script:
   - node --version
   - npm --version
   - npx --version
+  - node -e "console.log('RAM:', (require('os').totalmem() / 1e6).toFixed(3), 'MB')"
+  - node -e "console.log('CPU:', require('os').cpus().length, 'x', require('os').cpus()[0].model)"
   - npm test
 after_test:
 - npx codecov
