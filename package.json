@@ -61,7 +61,6 @@
   },
   "dependencies": {
     "@phc/format": "^0.3.4",
-    "pify": "^3.0.0",
     "safe-buffer": "^5.1.1",
     "tsse": "^1.1.4"
   },

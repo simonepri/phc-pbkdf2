@@ -2,7 +2,6 @@
 'use strict';
 
 const crypto = require('crypto');
-const pify = require('pify');
 const tsse = require('tsse');
 const phc = require('@phc/format');
 
@@ -44,6 +43,25 @@ const digests = {
     keylen: 64, // bytes
   },
 };
+
+/**
+ * Promisify a function.
+ * @private
+ * @param  {Function} fn The function to promisify.
+ * @return {Function} The promisified function.
+ */
+function pify(fn) {
+  return function() {
+    return new Promise((resolve, reject) => {
+      const args = Array.prototype.slice.call(arguments);
+      args.push((err, result) => {
+        if (err) reject(err);
+        else resolve(result);
+      });
+      fn.apply(this, args);
+    });
+  };
+}
 
 /**
  * Generates a cryptographically secure random string for use as a password salt
