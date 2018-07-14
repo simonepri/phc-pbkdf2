@@ -4,6 +4,7 @@
 const crypto = require('crypto');
 const tsse = require('tsse');
 const phc = require('@phc/format');
+const gensalt = require('@kdf/salt');
 
 const MAX_UINT32 = 4294967295; // 2**32 - 1
 
@@ -61,17 +62,6 @@ function pify(fn) {
       fn.apply(this, args);
     });
   };
-}
-
-/**
- * Generates a cryptographically secure random string for use as a password salt
- * using Node's built-in crypto.randomBytes().
- * @private
- * @param  {number} length The length of the salt to be generated.
- * @return {Promise.<string>} The salt string.
- */
-function genSalt(length) {
-  return pify(crypto.randomBytes)(length);
 }
 
 /**
@@ -139,7 +129,7 @@ function hash(password, options) {
   // Use the max size allowed for the given digest
   const keylen = digests[digest].keylen;
 
-  return genSalt(saltSize).then(salt => {
+  return gensalt(saltSize).then(salt => {
     return pify(crypto.pbkdf2)(password, salt, iterations, keylen, digest).then(
       hash => {
         const phcstr = phc.serialize({
