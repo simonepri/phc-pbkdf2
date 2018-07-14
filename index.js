@@ -1,4 +1,4 @@
-/* eslint-disable capitalized-comments,complexity,prefer-destructuring */
+/* eslint-disable capitalized-comments,complexity,prefer-destructuring,prefer-rest-params */
 'use strict';
 
 const crypto = require('crypto');
