@@ -1,4 +1,4 @@
-/* eslint-disable max-params,capitalized-comments */
+/* eslint-disable capitalized-comments,complexity,prefer-destructuring */
 'use strict';
 
 const crypto = require('crypto');
@@ -24,7 +24,7 @@ const defaults = {
   // significantly increasing the memory requirements, which increases the cost
   // for an attacker wishing to attack use hardware-based password crackers
   // based on GPUs or ASICs.
-  digest: 'sha512',
+  digest: 'sha512'
 };
 
 /**
@@ -34,14 +34,14 @@ const defaults = {
  */
 const digests = {
   sha1: {
-    keylen: 20, // bytes
+    keylen: 20 // bytes
   },
   sha256: {
-    keylen: 32, // bytes
+    keylen: 32 // bytes
   },
   sha512: {
-    keylen: 64, // bytes
-  },
+    keylen: 64 // bytes
+  }
 };
 
 /**
@@ -146,7 +146,7 @@ function hash(password, options) {
           id: `pbkdf2-${digest}`,
           params: {i: iterations},
           salt,
-          hash,
+          hash
         });
         return phcstr;
       }
@@ -240,5 +240,5 @@ function identifiers() {
 module.exports = {
   hash,
   verify,
-  identifiers,
+  identifiers
 };
