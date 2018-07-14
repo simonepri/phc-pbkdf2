@@ -148,8 +148,8 @@ function hash(password, options) {
  * Determines whether or not the hash stored inside the PHC formatted string
  * matches the hash generated for the password provided.
  * @public
- * @param  {string} password User's password input.
  * @param  {string} phcstr Secure hash string generated from this package.
+ * @param  {string} password User's password input.
  * @returns {Promise.<boolean>} A boolean that is true if the hash computed
  * for the password matches.
  */
