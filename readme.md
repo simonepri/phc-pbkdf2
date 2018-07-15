@@ -402,7 +402,7 @@ This package implements them [here][tvec].
 <dd><p>Computes the hash string of the given password in the PHC format using Node&#39;s
 built-in crypto.randomBytes() and crypto.pbkdf2().</p>
 </dd>
-<dt><a href="#verify">verify(password, phcstr)</a> ⇒ <code>Promise.&lt;boolean&gt;</code></dt>
+<dt><a href="#verify">verify(phcstr, password)</a> ⇒ <code>Promise.&lt;boolean&gt;</code></dt>
 <dd><p>Determines whether or not the hash stored inside the PHC formatted string
 matches the hash generated for the password provided.</p>
 </dd>
