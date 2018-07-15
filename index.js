@@ -180,6 +180,11 @@ function verify(phcstr, password) {
   }
   const digest = idparts[1];
 
+  // Parameters Existence Validation
+  if (typeof phcobj.params !== 'object') {
+    return Promise.reject(new TypeError('The param section cannot be empty'));
+  }
+
   // Iterations Validation
   if (
     typeof phcobj.params.i !== 'number' ||
@@ -211,7 +216,7 @@ function verify(phcstr, password) {
 
   return pify(crypto.pbkdf2)(password, salt, iterations, keylen, digest).then(
     newhash => {
-      const match = tsse(hash.toString('base64'), newhash.toString('base64'));
+      const match = tsse(hash, newhash);
       return match;
     }
   );
