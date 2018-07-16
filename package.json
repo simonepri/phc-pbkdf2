@@ -61,7 +61,7 @@
   },
   "dependencies": {
     "@kdf/salt": "^1.0.0",
-    "@phc/format": "^0.4.2",
+    "@phc/format": "^0.5.0",
     "tsse": "^1.1.4"
   },
   "devDependencies": {
