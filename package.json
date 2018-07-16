@@ -1,5 +1,5 @@
 {
-  "version": "1.1.13",
+  "version": "1.1.14",
   "name": "@phc/pbkdf2",
   "description": "Node.JS PBKDF2 password hashing algorithm following the PHC string format",
   "license": "MIT",
